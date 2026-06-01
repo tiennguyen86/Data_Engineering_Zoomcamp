@@ -1,0 +1,78 @@
+Không sao cả. Cái lựa chọn **Python .gitignore** trên GitHub chỉ là cách GitHub tự tạo sẵn file `.gitignore` cho bạn.
+
+Nếu bạn đã tạo repo từ VS Code rồi thì tự thêm `.gitignore` vào dự án là được.
+
+Ví dụ với Data Engineering Zoomcamp, tạo file:
+
+```bash
+touch .gitignore
+```
+
+Mở file và thêm:
+
+```gitignore
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Mac/Linux
+.DS_Store
+
+# Environment variables
+.env
+
+# Data files
+*.csv
+*.parquet
+*.db
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+```
+
+Sau đó:
+
+```bash
+git add .
+git commit -m "Add gitignore"
+git push
+```
+
+---
+
+Nếu muốn lấy đúng file `.gitignore` chuẩn Python của GitHub:
+
+```bash
+curl -o .gitignore https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore
+```
+
+hoặc vào:
+
+[GitHub Python.gitignore](https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore?utm_source=chatgpt.com)
+
+---
+
+Riêng Data Engineering Zoomcamp thì mình khuyên dùng `.gitignore` kết hợp cho:
+
+* Python
+* Jupyter Notebook
+* Docker
+* Terraform
+* VS Code
+
+vì các tuần sau của khóa học đều dùng những thứ này.
+
+Nếu muốn, mình có thể đưa cho bạn một file `.gitignore` "chuẩn Data Engineer" dùng xuyên suốt cả Zoomcamp, AWS, Airflow, Spark, dbt luôn.

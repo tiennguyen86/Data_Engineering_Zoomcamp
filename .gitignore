@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Mac/Linux
+.DS_Store
+
+# Environment variables
+.env
+
+# Data files
+*.csv
+*.parquet
+*.db
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*

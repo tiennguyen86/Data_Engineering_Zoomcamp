@@ -143,3 +143,96 @@ Tôi sẽ biết ngay là:
 * Thư mục rỗng
 * Hay bị `.gitignore` chặn mất file.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Đã thấy nguyên nhân rồi.
+
+Hiện tại Git thấy đúng **1 file chưa được theo dõi**:
+
+```bash
+Untracked files:
+    Note
+```
+
+Nghĩa là bạn chỉ cần:
+
+```bash
+git add Note
+git commit -m "Initial commit"
+git push -u origin main
+```
+
+Hoặc đơn giản:
+
+```bash
+git add .
+git commit -m "Initial commit"
+git push -u origin main
+```
+
+---
+
+Nếu sau khi `git add .` mà commit vẫn lỗi, kiểm tra file đó là file hay thư mục:
+
+```bash
+ls -la
+```
+
+Tôi đoán thư mục của bạn đang có:
+
+```text
+Data_Engineering_Zoomcamp/
+└── Note
+```
+
+và chưa có gì khác.
+
+Thử ngay:
+
+```bash
+git add .
+git status
+```
+
+Nếu thành công bạn sẽ thấy:
+
+```bash
+Changes to be committed:
+    new file: Note
+```
+
+lúc đó commit và push sẽ chạy được.
+
+Gửi tiếp kết quả của:
+
+```bash
+git add .
+git status
+```
+
+nếu còn lỗi tôi sẽ xử lý tiếp.
+
