@@ -1,0 +1,130 @@
++) Kiểm tra phiên bản python
+
+python3 -V
+
++) Làm cho dấu nhắc trở nên ngắn hơn
+PS1="> "
+echo 'PS1="> "' > ~/.bashrc
+
+Có, nhưng mình khuyên **không nên copy y hệt** như trong video.
+
+Trong ảnh trên, giảng viên đang đổi prompt Bash:
+
+```bash
+PS1="> "
+echo 'PS1="> "' > ~/.bashrc
+```
+
+Kết quả là terminal chỉ hiện:
+
+```bash
+>
+```
+
+Thay vì một prompt dài.
+
+### Tại sao họ làm vậy?
+
+Trong khóa Docker, mục tiêu là tập trung vào lệnh Docker, không phải nhìn:
+
+```bash
+~/workspace/docker-workshop (main)
+alexey@...
+...
+```
+
+nên họ rút gọn prompt cho dễ nhìn khi quay video.
+
+---
+
+### Với trường hợp của bạn
+
+Prompt hiện tại:
+
+```text
+~/Dev/Data_Engineering_Zoomcamp / on main !1 ?1
+>
+```
+
+đang dùng một theme đẹp (có thể là Starship hoặc Oh My Posh).
+
+Nó cho biết:
+
+* Thư mục hiện tại
+* Nhánh Git
+* File chưa commit (`!1`)
+* File chưa track (`?1`)
+
+Đây là thông tin rất hữu ích khi làm Data Engineering.
+
+Mình sẽ giữ nguyên.
+
+---
+
+### Nếu muốn prompt gọn hơn
+
+Thay vì:
+
+```bash
+PS1="> "
+```
+
+có thể dùng:
+
+```bash
+export PS1='\$ '
+```
+
+hiện:
+
+```bash
+$
+```
+
+hoặc:
+
+```bash
+export PS1='docker> '
+```
+
+hiện:
+
+```bash
+docker>
+```
+
+---
+
+### Nếu đang dùng Starship
+
+Kiểm tra:
+
+```bash
+which starship
+```
+
+Nếu ra đường dẫn:
+
+```bash
+/usr/bin/starship
+```
+
+thì đừng sửa `PS1`.
+
+Chỉ cần chỉnh file:
+
+```bash
+~/.config/starship.toml
+```
+
+là được.
+
+---
+
+Với lộ trình Data Engineer trên Linux, mình khuyên:
+
+✅ Giữ prompt hiện tại
+
+❌ Không đổi thành `PS1="> "` như video
+
+vì sau này khi làm Git, Docker, Kubernetes, Terraform, nhìn thấy nhánh Git và trạng thái repo ngay trên terminal rất tiện. Hiện tại prompt của bạn còn hữu ích hơn prompt của giảng viên trong video.

@@ -1,0 +1,102 @@
+Thông báo này có nghĩa là:
+
+✅ **Docker đã được cài đặt thành công**
+
+Bạn vừa chạy:
+
+```bash
+docker
+```
+
+nên Docker hiển thị danh sách lệnh trợ giúp (help menu).
+
+---
+
+Bây giờ kiểm tra thêm 3 thứ quan trọng:
+
+### 1. Kiểm tra phiên bản
+
+```bash
+docker --version
+```
+
+Ví dụ:
+
+```text
+Docker version 28.2.2, build xxxxx
+```
+
+---
+
+### 2. Kiểm tra Docker daemon có chạy không
+
+```bash
+docker ps
+```
+
+Nếu thấy:
+
+```text
+CONTAINER ID   IMAGE   COMMAND   CREATED   STATUS   PORTS   NAMES
+```
+
+=> Docker hoạt động bình thường.
+
+Nếu thấy:
+
+```text
+Cannot connect to the Docker daemon
+```
+
+=> Docker Engine chưa chạy.
+
+---
+
+### 3. Chạy container đầu tiên
+
+```bash
+docker run hello-world
+```
+
+Nếu thành công sẽ hiện:
+
+```text
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+```
+
+Đây là bài test chính thức của Docker.
+
+---
+
+Nhìn prompt của bạn:
+
+```text
+~/Dev/Data_Engineering_Zoomcamp
+```
+
+mình đoán bạn đang học Data Engineering Zoomcamp tuần Docker.
+
+Sau khi test `hello-world`, bạn sẽ học tiếp các lệnh quan trọng nhất:
+
+```bash
+docker pull
+docker run
+docker ps
+docker stop
+docker rm
+docker images
+docker rmi
+docker build
+docker compose
+```
+
+Đây là khoảng **80% Docker mà Data Engineer dùng hằng ngày**.
+
+Chạy thử:
+
+```bash
+docker run hello-world
+```
+
+và gửi kết quả cho mình. Nếu có lỗi trên Pop!_OS/Linux mình sẽ chỉ cách sửa ngay.

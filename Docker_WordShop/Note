@@ -1,0 +1,7 @@
+Kiểm tra docker có được cài đặt chính xác hay không:
+  docker run hello-world
+
+docker run -it ubuntu
+
+Xem lại 20p ban đầu
+

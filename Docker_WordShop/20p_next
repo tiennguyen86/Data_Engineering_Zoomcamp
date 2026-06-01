@@ -1,0 +1,4 @@
+mkdir test
+cd test
+touch file1.txt file2.txt file3.txt
+echo "Hello from host" > file1.txt
