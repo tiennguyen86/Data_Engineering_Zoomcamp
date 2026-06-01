@@ -1,0 +1,145 @@
+Ngày 1 tháng 6 năm 2026
+
+lỗi 1:
+git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:tiennguyen86/Data_Engineering_Zoomcamp.git'
+
+thường có 3 nguyên nhân chính:
+
+1. Chưa có commit nào
+
+Kiểm tra:
+
+git log
+
+Nếu báo:
+
+fatal: your current branch 'main' does not have any commits yet
+
+thì cần commit trước:
+
+git add .
+git commit -m "first commit"
+git push -u origin main
+2. Nhánh hiện tại không phải là main
+
+Kiểm tra:
+
+git branch
+
+Ví dụ kết quả:
+
+* master
+
+thì bạn đang ở nhánh master, không phải main.
+
+Lúc đó push:
+
+git push -u origin master
+
+hoặc đổi tên:
+
+git branch -M main
+git push -u origin main
+3. Repository chưa được khởi tạo đúng
+
+Kiểm tra:
+
+git status
+
+Nếu báo:
+
+fatal: not a git repository
+
+thì phải:
+
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:tiennguyen86/Data_Engineering_Zoomcamp.git
+git push -u origin main
+
+Gửi cho tôi kết quả của 3 lệnh này:
+
+git status
+git branch
+git remote -v
+
+
+
+
+
+
+
+
+
+
+
+
+
+Đúng rồi, lỗi đã rõ.
+
+Bạn đang ở nhánh `main` nhưng **chưa có commit nào cả**, nên Git không có gì để push lên GitHub.
+
+Làm lần lượt:
+
+```bash
+git status
+```
+
+Nếu có file hiện màu đỏ (untracked files), thêm chúng vào staging:
+
+```bash
+git add .
+```
+
+Commit lần đầu:
+
+```bash
+git commit -m "Initial commit"
+```
+
+Sau đó push:
+
+```bash
+git push -u origin main
+```
+
+---
+
+Nếu `git commit` báo:
+
+```bash
+nothing to commit
+```
+
+thì có nghĩa thư mục của bạn đang trống hoặc tất cả file đều bị `.gitignore` bỏ qua.
+
+Kiểm tra:
+
+```bash
+ls -la
+```
+
+hoặc
+
+```bash
+tree
+```
+
+---
+
+Cho tôi xem kết quả của:
+
+```bash
+git status
+```
+
+Tôi sẽ biết ngay là:
+
+* Chưa `git add`
+* Thư mục rỗng
+* Hay bị `.gitignore` chặn mất file.
+
